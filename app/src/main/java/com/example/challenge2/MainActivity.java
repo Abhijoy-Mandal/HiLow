@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         //TODO: Jump to game class
         EditText name = findViewById(R.id.editName);
         String nameStr = name.getText().toString();
-        Intent intent = new Intent(MainActivity.this, gamePage.class);
+        Intent intent = new Intent(MainActivity.this, LevelSelect.class);
         intent.putExtra("usrName", nameStr);
         startActivity(intent);
 

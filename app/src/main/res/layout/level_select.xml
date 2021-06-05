@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select range of numbers to guess from"
+        android:layout_centerInParent="true"
+        android:textSize="22sp"
+        android:textColor="@color/teal_700"
+        android:id="@+id/levelPrompt"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="lower"
+        android:inputType="numberSigned"
+        android:layout_below="@+id/levelPrompt"
+        android:layout_toLeftOf="@+id/spacer1"
+        android:id="@+id/lowerBound"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="to"
+        android:layout_below="@+id/levelPrompt"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/spacer1"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/spacer1"
+        android:hint="upper"
+        android:layout_below="@+id/levelPrompt"
+        android:layout_marginLeft="5dp"
+        android:inputType="numberSigned"
+        android:id="@+id/upperBound"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/upperBound"
+        android:layout_centerHorizontal="true"
+        android:text="START!"
+        android:backgroundTint="@color/teal_700"
+        android:onClick="startGame"/>
+</RelativeLayout>

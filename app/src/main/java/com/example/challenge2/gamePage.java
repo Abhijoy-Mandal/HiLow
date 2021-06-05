@@ -18,25 +18,27 @@ public class gamePage extends AppCompatActivity{
     private String name;
     private int tries = 5;
     private int actual;
-
+    private int upper;
+    private int lower;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_page);
         Bundle bundle = getIntent().getExtras();
         this.name = bundle.getString("usrName");
+        this.lower = bundle.getInt("lower");
+        this.upper = bundle.getInt("upper");
         createGamepage(this.name);
 
     }
     public void createGamepage(String userName) {
-
         this.name = userName;
         TextView gamePrompt = findViewById(R.id.gamePrompt);
-        gamePrompt.setText("Guess a number "+this.name+"!");
+        gamePrompt.setText("Guess a number "+this.name+"!("+String.valueOf(this.lower)+" to "+String.valueOf(this.upper));
         TextView triesLeft = findViewById(R.id.triesLeftView);
         triesLeft.setText(String.valueOf(this.tries) + " tries left.");
-
-        this.actual = (int)(Math.random()*2);
+        int range = this.upper -this.lower;
+        this.actual = (int)(Math.random()*range)+(int)this.lower;
     }
 
     public void gameFunction(View view){
