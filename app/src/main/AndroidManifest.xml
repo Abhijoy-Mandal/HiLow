@@ -19,6 +19,7 @@
         <activity android:name=".gamePage"/>
         <activity android:name=".gameOverPage"/>
         <activity android:name=".CongratulationsPage"/>
+        <activity android:name=".LevelSelect"/>
 
     </application>
 
